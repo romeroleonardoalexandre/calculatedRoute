@@ -1,0 +1,24 @@
+GET http://localhost:3000/places?text=mina nova, blumenau, 442
+
+####
+
+@originId=ChIJbULhvPId35QRNLqYLzTobPc
+@destinationId=EkJSLiBDYXJsb3MgS3JldHosIDQ0MiAtIEJhZGVuZnVydCwgQmx1bWVuYXUgLSBTQywgODkwNzAtMjYwLCBCcmFzaWwiMRIvChQKEglXAAAxxh3flBEWzv6-jgyjsxC6AyoUChIJ3yAnA8Yd35QR4bx52ecRZMc
+
+GET http://localhost:3000/directions?originId={{originId}}&destinationId={{destinationId}}
+
+###
+POST http://localhost:3000/routes
+Content-Type: application/json
+
+{
+    "name": "rota 1",
+    "source_id": "{{ originId }}",
+    "destination_id": "{{ destinationId }}"
+}
+
+###
+GET http://localhost:3000/routes
+
+###
+GET http://localhost:3000/routes/675b266f8d1354da9bcd00d0
